@@ -1,11 +1,14 @@
 const { model } = require('mongoose')
 const UserSchema = require('./user')
-const CommentSchema = require('./comment')
+const ReviewSchema = require('./review')
+const ProductSchema = require('./product')
 
 const User = model('User', UserSchema)
-const Task = model('Task', TaskSchema)
+const Review = model('Task', ReviewSchema)
+const Product = model('Task', ProductSchema)
 
 module.exports = {
   User,
-  Task
+  Review,
+  Product
 }
