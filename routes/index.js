@@ -6,27 +6,27 @@ const router = Router()
 router.get('/', (req, res) => res.send('This is the Landing Page!'))
 
 //Get all products
-router.get('/products', controllers.getAllProducts)
+router.get('/api/products', controllers.getAllProducts)
 
 // Post new product
-router.post('/product', controllers.createProduct)
+router.post('/api/product', controllers.createProduct)
 
 //delete product
-router.delete('/product/:id', controllers.deleteProduct)
+router.delete('/api/product/:id', controllers.deleteProduct)
 
 //get all reviews
-router.get('/product/reviews', controllers.getAllReviews)
+router.get('/api/product/reviews', controllers.getAllReviews)
 
 //Get product by Id from products page
-router.get('/product/:id', controllers.getProductById)
+router.get('/api/product/:id', controllers.getProductById)
 
 //Post a new review
-router.post('/product/review', controllers.createReview)
+router.post('/api/product/review', controllers.createReview)
 
 //update review
-router.put('/product/review/:id', controllers.updateReview)
+router.put('/api/product/review/:id', controllers.updateReview)
 
 //delete review
-router.delete('/product/review/:id', controllers.deleteReview)
+router.delete('/api/product/review/:id', controllers.deleteReview)
 
 module.exports = router

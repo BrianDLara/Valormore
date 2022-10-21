@@ -1,15 +1,13 @@
 import React from 'react'
 
-const Featured = () => {
-
-
+const BestSeller = () => {
   return (
     <>
     <section>
-        <h1>Featured Products</h1>
+        <h1>Best Selling</h1>
     </section>
     </>
   )
 }
 
-export default Featured
+export default BestSeller

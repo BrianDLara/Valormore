@@ -27,11 +27,14 @@
 
 .nav-link{
 font-size: 1.6rem;
-margin: .7rem 2rem;
+margin: .7rem 1.5rem;
 gap: 1rem;
 padding: .3rem;
 text-decoration: none;
+color: #ea8e8e;
 }
+
+
 
 
 
