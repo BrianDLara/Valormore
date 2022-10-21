@@ -4,6 +4,16 @@
     margin: 0;
 }
 
+h1{
+  font-size: 3rem;
+}
+
+img{
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
 .main{
   background-color: purple;
 }
@@ -34,8 +44,26 @@ text-decoration: none;
 color: #ea8e8e;
 }
 
+/* Featured Product */
+.featured-product{
+  
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+}
 
-
+.featured-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 30rem;
+  margin: 3rem 2rem 15rem 2rem;
+  gap:3rem;
+  background-color: white;
+}
 
 
 

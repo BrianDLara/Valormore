@@ -5,7 +5,7 @@ import React from 'react'
 const Nav = () => {
   return(  
     <div className = "nav-container">
-        <img src="images/logo.png" alt="website logo" className='logo'/>
+        <img src="/images/logo.png" alt="website logo" className='logo'/>
 
         <div>
             <NavLink to = '/' className="nav-link"> Home </NavLink>

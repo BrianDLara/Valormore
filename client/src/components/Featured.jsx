@@ -1,15 +1,17 @@
 import React from 'react'
 
-const Featured = () => {
+const Featured = (props) => {
 
 
   return (
-    <>
-    <section>
-        <h1>Featured Products</h1>
-    </section>
-    </>
+    <div className='featured-product'>
+      
+          <img src={props.image} alt={props.productName} />
+       
+        
+    </div>
   )
 }
+
 
 export default Featured
