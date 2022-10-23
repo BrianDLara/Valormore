@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Nav from './components/Nav'
-import Product from './components/Product'
+import Product from './pages/Product'
 
 import './App.css'
 

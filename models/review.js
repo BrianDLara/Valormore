@@ -5,7 +5,7 @@ const Review = new Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    image: { type: String, required: false }
+    product_id: { type: Schema.Types.ObjectId, ref: 'product_id' }
   },
   { timestamps: true }
 )

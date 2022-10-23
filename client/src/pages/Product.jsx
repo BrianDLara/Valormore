@@ -9,6 +9,7 @@ const Product = () => {
 
     const [product, setProduct] = useState(null)
     
+    
     const findProductById = async () => {
         const response = await axios.get(`http://localhost:3001/api/product/${productId}`)
         setProduct(response.data.product)
@@ -16,8 +17,13 @@ const Product = () => {
         
     }
 
+  
+
+
+
     useEffect(() => {
         findProductById()
+      
       }, [])
 
     return product !== null ? (

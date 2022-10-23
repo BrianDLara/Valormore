@@ -17,6 +17,9 @@ router.delete('/api/product/:id', controllers.deleteProduct)
 //get all reviews
 router.get('/api/product/reviews', controllers.getAllReviews)
 
+//get all reviews by product id
+router.get('/api/product/reviews/:id', controllers.getReviewByProductId)
+
 //Get product by Id from products page
 router.get('/api/product/:id', controllers.getProductById)
 

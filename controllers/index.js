@@ -1,5 +1,5 @@
-const Review = require('../models/review')
 const Product = require('../models/product')
+const Review = require('../models/review')
 // const User = require('../models/user')
 
 const getAllProducts = async (req, res) => {
@@ -63,6 +63,20 @@ const getAllReviews = async (req, res) => {
   }
 }
 
+const getReviewByProductId = async (req, res) => {
+  try {
+    const { id } = req.params
+
+    const reviews = await Review.find({ product_id: id })
+    if (reviews) {
+      return res.status(200).json({ reviews })
+    }
+    return res.status(404).send('Reviews with the specified ID does not exist')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const createReview = async (req, res) => {
   try {
     const review = await new Review(req.body)
@@ -105,6 +119,7 @@ module.exports = {
   deleteProduct,
   getProductById,
   getAllReviews,
+  getReviewByProductId,
   createReview,
   updateReview,
   deleteReview
