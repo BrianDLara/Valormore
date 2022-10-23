@@ -8,41 +8,55 @@ import { Link } from 'react-router-dom'
 const Base_URL = 'http://localhost:3001/api'
 
 const Home = () => {
-  const [products, setProducts] = useState([])
+  const [featuredProducts, setProducts] = useState([])
+  const [bestSellerProducts, setBestSellerProducts] = useState([])
 
   const getProducts = async () => {
     const response = await axios.get(`${Base_URL}/products`)
 
     setProducts(response.data.products)
-    console.log(response.data.products)
+    setBestSellerProducts(response.data.products)
   }
 
+  //Got this idea from Jeremy Harrell's game 'Blackjack-with-Jeremy' Github: https://github.com/wolfy1313
+  const ProductShuffle = (event) => {
+    for (let i = event.length - 1; i > 0; i--) {
+      const randomProduct = Math.floor(Math.random() * (i + 1))
+      ;[event[i], event[randomProduct]] = [event[randomProduct], event[i]]
+    }
+  }
   useEffect(() => {
     getProducts()
   }, [])
-  console.log(products.product_name)
 
+  ProductShuffle(featuredProducts)
+
+  // let randomProducts = products[Math.floor(Math.random() * products.length)]
   return (
     <div className="main">
       <h1>Featured Products</h1>
       <section className="featured-container">
-        {products.map((product) => (
-          <Featured
+        {featuredProducts.map((FeaturedProduct) => (
+          <Link to={`api/product/${FeaturedProduct._id}`}>
+            <Featured
+              key={FeaturedProduct._id}
+              productName={FeaturedProduct.product_name}
+              description={FeaturedProduct.description}
+              image={FeaturedProduct.image}
+            />
+          </Link>
+        ))}
+      </section>
+
+      <section className="best-seller-container">
+        {bestSellerProducts.map((product) => (
+          <BestSeller
             key={product._id}
             productName={product.product_name}
             description={product.description}
             image={product.image}
           />
         ))}
-      </section>
-
-      <section className="best-seller-container">
-        <BestSeller
-          key={products._id}
-          productName={products.product_name}
-          description={products.description}
-          image={products.image}
-        />
       </section>
     </div>
   )

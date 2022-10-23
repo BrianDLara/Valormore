@@ -4,11 +4,8 @@ const Featured = (props) => {
 
 
   return (
-    <div className='featured-product'>
-      
-          <img src={props.image} alt={props.productName} />
-       
-        
+    <div className='featured-product inline-snap'>
+      <img src={props.image} alt={props.productName} />
     </div>
   )
 }

@@ -12,8 +12,6 @@ app.use(express.json())
 app.use(logger('dev'))
 app.use(cors())
 
-//This is for when I start implementing api's
-// app.use('/api', routes)
 app.use('/', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
