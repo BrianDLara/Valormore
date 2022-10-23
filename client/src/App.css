@@ -86,7 +86,7 @@ color: #ea8e8e;
 }
 
 /* product */
-.product{
+.product-page{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,5 +95,28 @@ color: #ea8e8e;
   margin: 5rem 1rem 
 }
 
+.product-info{
+  display: flex;
+  flex-direction: row;
+}
 
+/* Product reviews */
+.product-reviews{
+margin: 10rem 1.5rem;
+}
+
+.review-title{
+margin: 0 1rem 1.5rem .5rem;
+padding: .5rem;
+}
+
+.review-description{
+  color:#000000;
+  font-size:20px;
+  width:45%;
+  position: relative;
+  display: inline-block;
+  height: auto;
+  margin-bottom: 3rem;
+}
 
