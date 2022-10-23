@@ -84,3 +84,19 @@ color: #ea8e8e;
 .inline-snap > * {
   scroll-snap-align: start;
 }
+
+/* product */
+.product-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 5rem 1rem 
+}
+
+.product-info{
+  display: flex;
+  flex-direction: row;
+}
+
