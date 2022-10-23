@@ -20,11 +20,13 @@ const Product = () => {
         findProductById()
       }, [])
 
-    return (
-    <div >
-        
+    return product !== null ? (
+    <div className= 'product'>
+        <h1>{product.product_name}</h1>
+        <img src={product.image} alt={product.productName} />
+        <h3>{product.description}</h3>
     </div>
-    ) 
+    ) : null
 }
 
 export default Product
