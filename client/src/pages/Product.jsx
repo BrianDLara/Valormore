@@ -8,7 +8,7 @@ const Product = () => {
 
 
     const [product, setProduct] = useState(null)
-    
+    const [reviews, setReviews] = useState(null)
     
     const findProductById = async () => {
         const response = await axios.get(`http://localhost:3001/api/product/${productId}`)
@@ -17,13 +17,20 @@ const Product = () => {
         
     }
 
-  
+    const findProductReviews = async () => {
+        const response = await axios.get(`http://localhost:3001/api/product/reviews/${productId}`)
+        setReviews(response)
+        console.log(response)
+        
+
+
+    }
 
 
 
     useEffect(() => {
         findProductById()
-      
+        findProductReviews()
       }, [])
 
     return product !== null ? (
