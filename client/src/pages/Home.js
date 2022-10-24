@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Featured from '../components/Featured'
 import BestSeller from '../components/BestSeller'
+import Banner from '../components/Banner'
 import { Link } from 'react-router-dom'
 
 const Base_URL = 'http://localhost:3001/api'
@@ -34,7 +35,9 @@ const Home = () => {
   // let randomProducts = products[Math.floor(Math.random() * products.length)]
   return (
     <div className="main">
-      <section className="banner"></section>
+      <section className="banner">
+        <Banner />
+      </section>
       <h1>Featured Products</h1>
       <section className="featured-container">
         {featuredProducts.map((FeaturedProduct) => (
