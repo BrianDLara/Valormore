@@ -15,7 +15,7 @@ const Product = () => {
     const findProductById = async () => {
         const response = await axios.get(`http://localhost:3001/api/product/${productId}`)
         setProduct(response.data.product)
-        console.log(response.data.product)
+        
         
         
     }
@@ -23,7 +23,7 @@ const Product = () => {
     const findProductReviews = async () => {
         const response = await axios.get(`http://localhost:3001/api/product/reviews/${productId}`)
         setReviews(response.data.reviews)
-        console.log(response.data.reviews)
+        
         
     }
     

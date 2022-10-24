@@ -56,7 +56,7 @@ margin: .7rem 1.5rem;
 gap: 1rem;
 padding: .3rem;
 text-decoration: none;
-color: #ea8e8e;
+color: #6885bf;
 }
 /* Banner */
 .banner{
@@ -205,3 +205,55 @@ padding: .5rem;
   padding: 1rem 3rem; 
 }
 
+/* Form */
+.form-container{
+  position: absolute;
+  margin: auto;
+  width: 40rem;
+  height: 40rem;
+  top:10rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  border-radius: 10px;
+  border: 2px solid rgb(147, 147, 147);
+  
+}
+
+.form-label, .form-input{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-subject-container{
+  margin: 2rem;
+  border-bottom: 1px solid rgb(147, 147, 147);
+ 
+}
+
+.form-header{
+  color: #768ebe;
+  font-size: 2rem;
+  font-weight: bold;
+  
+}
+
+.form-input{
+  margin: 2rem 0 3rem;
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid rgb(147, 147, 147)
+ 
+}
+
+.form-button{
+  position:absolute;
+ left: 38%;
+  color: white;
+  background-color: #768ebe;
+  border-radius: 5px;
+  padding: .5rem 3rem;
+  border: 2px solid rgb(116, 115, 115)
+}
