@@ -10,8 +10,8 @@ h1{
 }
 
 img{
-  width: 14rem;
-  height: 14rem;
+  width: 16rem;
+  height: 16rem;
   border-radius: 10px;
   border: 1px solid black;
   box-shadow: 6px 4px 5px gray;
@@ -29,8 +29,8 @@ img{
 .logo{
   width: 10rem;
   height: auto;
-  margin: .7rem 2rem;
-  padding: .3rem 1rem;
+  margin: .1rem 2rem;
+  padding: .1rem 1rem;
   gap: 1rem;
   border: none;
   box-shadow: none;
@@ -58,11 +58,11 @@ color: #ea8e8e;
 }
 /* Banner */
 .banner{
+  margin: 0 auto;
   display: flex;
   position: relative;
-  justify-content: center;
-  width: 100%;
-  height: 50rem;
+  width: 1900px;
+  height: 800px;
   overflow: hidden;
 }
 .banner .img-banner {
@@ -77,18 +77,6 @@ color: #ea8e8e;
 }
 
 
-.banner #img-banner-5{
-  background-image: url('../public/images/banner5.jpg');
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.banner #img-banner-4{
-  background-image: url('../public/images/banner4.jpg');
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .banner #img-banner-3{
   background-image: url('../public/images/banner3.jpg');
   background-size:cover;
@@ -107,6 +95,11 @@ color: #ea8e8e;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.home-section-title{
+  margin: 6rem;
+}
+
 
 /* Featured Product */
 .featured-product, .best-seller-product{
@@ -129,8 +122,8 @@ color: #ea8e8e;
   align-items: center;
   height: 20rem;
   width: auto;
-  margin: 3rem 2rem 15rem 2rem;
-  gap:3rem;
+  margin: 0 2rem 10rem 2rem;
+  gap:6.5rem;
   background-color: white;
 }
 
@@ -142,7 +135,7 @@ color: #ea8e8e;
   scroll-snap-align: start;
 }
 
-/* product */
+/* single product */
 .product-page{
   display: flex;
   flex-direction: column;

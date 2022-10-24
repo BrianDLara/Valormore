@@ -38,7 +38,7 @@ const Home = () => {
       <section className="banner">
         <Banner />
       </section>
-      <h1>Featured Products</h1>
+      <h1 className="home-section-title">Featured Products</h1>
       <section className="featured-container">
         {featuredProducts.map((FeaturedProduct) => (
           <Link to={`api/product/${FeaturedProduct._id}`}>
@@ -51,7 +51,7 @@ const Home = () => {
           </Link>
         ))}
       </section>
-
+      <h1 className="home-section-title">Best Sellers</h1>
       <section className="best-seller-container">
         {bestSellerProducts.map((product) => (
           <BestSeller
