@@ -183,7 +183,7 @@ font-size: 2rem;
 
 /* Product reviews */
 .product-reviews{
-margin: 10rem 1.5rem;
+margin: 10rem 1.5rem 5rem;
 }
 
 .review-title{
@@ -199,5 +199,9 @@ padding: .5rem;
   display: inline-block;
   height: auto;
   margin-bottom: 3rem;
+}
+
+.review-button{
+  padding: 1rem 3rem; 
 }
 

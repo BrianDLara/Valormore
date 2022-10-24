@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Reviews from '../components/Reviews'
+import { Link } from 'react-router-dom'
 
 const Product = () => {
     let { productId } = useParams()
@@ -49,24 +50,22 @@ const Product = () => {
             <h3 className='product-description'>{product.description}</h3>
             </div>
         </section>
-<h1>Customer Reviews</h1>
+        
+        <h1>Customer Reviews</h1>
+        
         <section className='product-reviews'> 
-        {reviews.map((review) => (
-            <Reviews 
-            key = {review._id}
-            title = {review.title}
-            description = {review.description}
-            />
-        ))
-            
-            
-            
-        }
-
-
-
-
+            {reviews.map((review) => (
+                <Reviews 
+                key = {review._id}
+                title = {review.title}
+                description = {review.description}
+                />
+            ))}
         </section>
+
+        <Link type="button" to ={ `/api/product/${productId}/new_review`} className='review-button'>
+       Add Review
+        </Link>
     </div>
     ) : null
 }

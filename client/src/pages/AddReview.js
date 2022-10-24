@@ -19,7 +19,11 @@ const AddReview = () => {
     console.log(response.data)
   }
 
-  return <div></div>
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  )
 }
 
 export default AddReview
