@@ -1,10 +1,11 @@
-import axios from 'axios'
 import React from 'react'
+import axios from 'axios'
 import { useState, useEffect } from 'react'
+// import { useNavigate } from 'react-router-dom'
 
 const AddReview = () => {
   const initialState = {
-    headline: '',
+    title: '',
     description: ''
   }
 
@@ -37,16 +38,16 @@ const AddReview = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="form-container">
-        {/* headline section */}
+        {/* title section */}
         <div className="form-subject-container">
-          <label htmlFor="headline" className="form-header">
+          <label htmlFor="title" className="form-header">
             Write a Headline
           </label>
           <input
             type="text"
-            id="headline"
+            id="title"
             onChange={handleChange}
-            value={formState.headline}
+            value={formState.title}
             required
             placeholder="What's your review about?"
             className="form-input"
