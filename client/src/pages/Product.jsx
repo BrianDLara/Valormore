@@ -42,12 +42,14 @@ const Product = () => {
       
     return product !== null ? (
     <div className= 'product-page'>
-        <section className='product-info'> 
-            <img src={product.image} alt={product.productName} />
+        <section className='product-container'> 
+            <img src={product.image} alt={product.productName} className='product-image'/>
+            <div className='product-text'> 
             <h1>{product.product_name}</h1>
-            <h3>{product.description}</h3>
+            <h3 className='product-description'>{product.description}</h3>
+            </div>
         </section>
-
+<h1>Customer Reviews</h1>
         <section className='product-reviews'> 
         {reviews.map((review) => (
             <Reviews 

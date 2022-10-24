@@ -34,6 +34,7 @@ const Home = () => {
   // let randomProducts = products[Math.floor(Math.random() * products.length)]
   return (
     <div className="main">
+      <section className="banner"></section>
       <h1>Featured Products</h1>
       <section className="featured-container">
         {featuredProducts.map((FeaturedProduct) => (
