@@ -1,12 +1,15 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const AddReview = () => {
+  let navigate = useNavigate()
+  let { productId } = useParams()
   const initialState = {
     title: '',
-    description: ''
+    description: '',
+    product_id: productId
   }
 
   const [review, setReview] = useState([])
