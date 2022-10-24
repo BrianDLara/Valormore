@@ -51,7 +51,9 @@ const Product = () => {
             </div>
         </section>
         
+        <span  className='divider'></span>
         <h1>Customer Reviews</h1>
+        <span  className='divider'></span>
         
         <section className='product-reviews'> 
             {reviews.map((review) => (
