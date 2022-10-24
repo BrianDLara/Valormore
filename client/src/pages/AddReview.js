@@ -29,7 +29,7 @@ const AddReview = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/api/product/review')
+    axios.post('http://localhost:3001/api/product/review', formState)
 
     setFormState(initialState)
     navigate(`/api/product/${productId}`)
