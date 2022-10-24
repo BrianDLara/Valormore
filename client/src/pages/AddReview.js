@@ -32,6 +32,7 @@ const AddReview = () => {
     axios.post('http://localhost:3001/api/product/review')
 
     setFormState(initialState)
+    navigate(`/api/product/${productId}`)
   }
 
   const handleChange = (event) => {
