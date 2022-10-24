@@ -1,11 +1,22 @@
+import axios from 'axios'
 import React from 'react'
 import { useState, useEffect } from 'react'
 
 const AddReview = () => {
-  const [review, getReview] = useState([])
   const initialState = {
     subject: '',
     description: ''
+  }
+
+  const [review, setReview] = useState([])
+  const [formState, setFormState] = useState(initialState)
+
+  const getReviews = async () => {
+    const response = await axios.get(
+      'http://localhost:3001/api/product/new_review'
+    )
+    setReview(response.data)
+    console.log(response.data)
   }
 
   return <div></div>

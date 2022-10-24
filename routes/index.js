@@ -20,6 +20,9 @@ router.get('/api/product/reviews', controllers.getAllReviews)
 //get all reviews by product id
 router.get('/api/product/reviews/:id', controllers.getReviewByProductId)
 
+//get review
+router.get('/api/product/new_review', controllers.getReview)
+
 //Get product by Id from products page
 router.get('/api/product/:id', controllers.getProductById)
 
