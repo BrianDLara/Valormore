@@ -3,7 +3,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const AddReview = () => {
+const AddReview = (props) => {
+  //routed-dom imports
   let navigate = useNavigate()
   let { productId } = useParams()
   let { reviewId } = useParams()
@@ -14,41 +15,40 @@ const AddReview = () => {
     product_id: productId
   }
 
-  const [productReview, setProductReview] = useState([])
-  const [review, setReview] = useState([])
   const [formState, setFormState] = useState(initialState)
 
-  const getReviewsByProductId = async () => {
-    const response = await axios.get(
-      'http://localhost:3001/api/product/new_review'
-    )
-    setProductReview(response.data)
-    console.log(response.data)
-  }
-
-  const getReviewsByReviewId = async () => {
-    if (reviewId) {
-      const response = await axios.get(`/api/product/review/${reviewId}`)
-      setReview(response.data)
-      console.log(response.data)
-    }
-  }
-
   useEffect(() => {
-    getReviewsByProductId()
-    getReviewsByReviewId()
+    const getReview = async () => {
+      const res = await axios.get(
+        `http://localhost:3001/api/product/review/${reviewId}`
+      )
+      setFormState(res.data)
+    }
+    getReview()
   }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    axios.post('http://localhost:3001/api/product/review', formState)
-
-    setFormState(initialState)
-    navigate(`/api/product/${productId}`)
+  const handleRefresh = () => {
+    window.location.reload(false)
   }
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    if (initialState._id === undefined) {
+      e.preventDefault()
+      axios.post('http://localhost:3001/api/product/review', formState)
+      navigate(`/api/product/${productId}`)
+    } else {
+      e.preventDefault()
+      axios.put(
+        `http://localhost:3001/api/product/review/${reviewId}`,
+        formState
+      )
+      navigate(`/api/product/${productId}`)
+      handleRefresh()
+    }
   }
 
   return (

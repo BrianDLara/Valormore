@@ -21,7 +21,7 @@ function App() {
             element={<ReviewForm />}
           />
           <Route
-            path="/api/product/:reviewId/edit_review"
+            path="/api/product/:productId/:reviewId/edit_review"
             element={<ReviewForm />}
           />
         </Routes>
