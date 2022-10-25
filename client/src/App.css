@@ -151,6 +151,7 @@ color: #6885bf;
 
 .inline-snap{
   scroll-snap-type:inline mandatory;
+  scroll-snap-align: start;
 }
 
 .inline-snap > * {
@@ -196,6 +197,24 @@ color: #6885bf;
 .product-description{
 margin-top: 7rem;
 font-size: 2rem;
+}
+
+.buy-button{
+  position: relative;
+  left: 10rem;
+  margin: 5rem 2rem 3rem;
+  padding: .5rem 2rem;
+
+  font-size: 2rem;
+  background-color: #FFA41C;
+
+  border: 2px solid rgb(188, 183, 183);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buy-button:hover{
+  background-color: #dd8e17dc;
 }
 
 
@@ -267,13 +286,19 @@ color:#6885bf;
 
 .review-button{
   position:absolute;
- left: 45%;
+  left: 45%;
+
+  font-size: 1.2rem;
   color: white;
   background-color: #768ebe;
   border-radius: 5px;
   padding: .5rem 3rem;
   border: 2px solid rgb(116, 115, 115);
   cursor: pointer;
+}
+
+.review-button:hover{
+  background-color: #5a719ef3;
 }
 
 
