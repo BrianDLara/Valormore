@@ -65,8 +65,8 @@ const Product = () => {
             ))}
         </section>
 
-        <Link type="button" to ={ `/api/product/${productId}/new_review`} className='review-button'>
-       Add Review
+        <Link type="button" to ={ `/api/product/${productId}/new_review`} >
+    <button className="review-button">Add Review</button>
         </Link>
     </div>
     ) : null
