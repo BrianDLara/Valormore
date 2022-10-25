@@ -177,12 +177,15 @@ color: #6885bf;
   display: flex;
   flex-direction: row;
   margin-bottom: 6rem;
+  width: 100%;
+  height: auto;
 }
 
 .product-image{
-  width: 50rem;
-  height: 50rem;
+  width: 50%;
+  height: 50%;
   margin: 2rem;
+  object-fit: cover;
 }
 
 .product-text{

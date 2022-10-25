@@ -35,7 +35,9 @@ const main = async () => {
     {
       product_name: 'Fleeced Leggings',
       description: `Want to stay warm, but don't like to wear loose sweat pants? This leggings have a fleece inner lining that came keep you warm all day`,
-      image: 'https://i.imgur.com/XCIoG28.jpg'
+      image: 'https://i.imgur.com/XCIoG28.jpg',
+      price: '$29.99',
+      available: 20
     }
   ]
 

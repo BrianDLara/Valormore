@@ -48,6 +48,8 @@ const Product = () => {
             <div className='product-text'> 
             <h1>{product.product_name}</h1>
             <h3 className='product-description'>{product.description}</h3>
+            <h3 className='product-description'>Price {product.price} USD</h3>
+            
             </div>
         </section>
         
