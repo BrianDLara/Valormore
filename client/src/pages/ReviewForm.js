@@ -8,6 +8,8 @@ const AddReview = (props) => {
   let navigate = useNavigate()
   let { productId } = useParams()
   let { reviewId } = useParams()
+
+  //initial state of the form with useParams to assign the _id & product_id
   const initialState = {
     _id: reviewId,
     title: '',
@@ -17,6 +19,7 @@ const AddReview = (props) => {
 
   const [formState, setFormState] = useState(initialState)
 
+  //finds a single review by it's Id
   useEffect(() => {
     const getReview = async () => {
       const res = await axios.get(
@@ -27,14 +30,17 @@ const AddReview = (props) => {
     getReview()
   }, [])
 
+  //refreshes the page. It will be used after submitting a form
   const handleRefresh = () => {
     window.location.reload(false)
   }
 
+  //assigns the form inputs to the appropriate keys.
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
+  //if-else statement that distinguishes between a post-review axios call vs put-review axios call
   const handleSubmit = (e) => {
     if (initialState._id === undefined) {
       e.preventDefault()
