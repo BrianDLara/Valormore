@@ -61,6 +61,7 @@ const Product = () => {
             {reviews.map((review) => (
                 <Reviews 
                 key = {review._id}
+                id = {review._id}
                 title = {review.title}
                 description = {review.description}
                 />

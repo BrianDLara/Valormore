@@ -6,25 +6,37 @@ import { useNavigate, useParams } from 'react-router-dom'
 const AddReview = () => {
   let navigate = useNavigate()
   let { productId } = useParams()
+  let { reviewId } = useParams()
   const initialState = {
+    _id: reviewId,
     title: '',
     description: '',
     product_id: productId
   }
 
+  const [productReview, setProductReview] = useState([])
   const [review, setReview] = useState([])
   const [formState, setFormState] = useState(initialState)
 
-  const getReviews = async () => {
+  const getReviewsByProductId = async () => {
     const response = await axios.get(
       'http://localhost:3001/api/product/new_review'
     )
-    setReview(response.data)
+    setProductReview(response.data)
     console.log(response.data)
   }
 
+  const getReviewsByReviewId = async () => {
+    if (reviewId) {
+      const response = await axios.get(`/api/product/review/${reviewId}`)
+      setReview(response.data)
+      console.log(response.data)
+    }
+  }
+
   useEffect(() => {
-    getReviews()
+    getReviewsByProductId()
+    getReviewsByReviewId()
   }, [])
 
   const handleSubmit = (e) => {

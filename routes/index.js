@@ -29,6 +29,9 @@ router.get('/api/product/:id', controllers.getProductById)
 //Post a new review
 router.post('/api/product/review', controllers.createReview)
 
+//get all reviews by review id
+router.get('/api/product/review/:id', controllers.getReviewByReviewId)
+
 //update review
 router.put('/api/product/review/:id', controllers.updateReview)
 
