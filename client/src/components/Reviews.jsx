@@ -29,7 +29,7 @@ const Reviews = (props) => {
   return (
     <div className='reviews-container'>
       <div id='review-options'>
-        <Link title={props.title} description={props.description} to={ `/api/product/${productId}/${props.id}/edit_review` }> 
+        <Link title={props.title} description={props.description} to={ `/product/${productId}/${props.id}/edit_review` }> 
           <button className='review-link'>Edit</button>
         </Link>
         <span className='review-link-divider'>|</span>

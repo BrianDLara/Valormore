@@ -6,36 +6,36 @@ const router = Router()
 router.get('/', (req, res) => res.send('This is the Landing Page!'))
 
 //Get all products
-router.get('/api/products', controllers.getAllProducts)
+router.get('/products', controllers.getAllProducts)
 
 // Post new product
-router.post('/api/product', controllers.createProduct)
+router.post('/product', controllers.createProduct)
 
 //delete product
-router.delete('/api/product/:id', controllers.deleteProduct)
+router.delete('/product/:id', controllers.deleteProduct)
 
 //get all reviews
-router.get('/api/product/reviews', controllers.getAllReviews)
+router.get('/product/reviews', controllers.getAllReviews)
 
 //get all reviews by product id
-router.get('/api/product/reviews/:id', controllers.getReviewByProductId)
+router.get('/product/reviews/:id', controllers.getReviewByProductId)
 
 //get review
-router.get('/api/product/new_review', controllers.getReview)
+router.get('/product/new_review', controllers.getReview)
 
 //Get product by Id from products page
 router.get('/api/product/:id', controllers.getProductById)
 
 //Post a new review
-router.post('/api/product/review', controllers.createReview)
+router.post('/product/review', controllers.createReview)
 
 //get all reviews by review id
-router.get('/api/product/review/:id', controllers.getReviewByReviewId)
+router.get('/product/review/:id', controllers.getReviewByReviewId)
 
 //update review
-router.put('/api/product/review/:id', controllers.updateReview)
+router.put('/product/review/:id', controllers.updateReview)
 
 //delete review
-router.delete('/api/product/review/:id', controllers.deleteReview)
+router.delete('/product/review/:id', controllers.deleteReview)
 
 module.exports = router

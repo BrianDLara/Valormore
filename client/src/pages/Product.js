@@ -12,16 +12,12 @@ const Product = () => {
   const [reviews, setReviews] = useState([])
 
   const findProductById = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/product/${productId}`
-    )
+    const response = await axios.get(`/api/product/${productId}`)
     setProduct(response.data.product)
   }
 
   const findProductReviews = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/product/reviews/${productId}`
-    )
+    const response = await axios.get(`/api/product/reviews/${productId}`)
     setReviews(response.data.reviews)
   }
 

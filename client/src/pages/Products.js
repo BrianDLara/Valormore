@@ -8,7 +8,7 @@ const Products = () => {
   const [products, setProducts] = useState(null)
 
   const getProducts = async () => {
-    const response = await axios.get(`http://localhost:3001/api/products`)
+    const response = await axios.get(`/api/products`)
     setProducts(response.data.products)
   }
 
@@ -19,7 +19,7 @@ const Products = () => {
   return products !== null ? (
     <div id="products">
       {products.map((product) => (
-        <Link to={`/api/product/${product._id}`}>
+        <Link to={`/product/${product._id}`}>
           <Product
             key={product._id}
             id={product._id}

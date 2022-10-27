@@ -6,20 +6,18 @@ import BestSeller from '../components/BestSeller'
 import Banner from '../components/Banner'
 import { Link } from 'react-router-dom'
 
-const Base_URL = 'http://localhost:3001/api'
-
 const Home = () => {
   const [featuredProducts, setProducts] = useState([])
   const [bestSellerProducts, setBestSellerProducts] = useState([])
 
   const getFeaturedProducts = async () => {
-    const response = await axios.get(`${Base_URL}/products`)
+    const response = await axios.get(`/api/products`)
 
     setProducts(response.data.products)
   }
 
   const getBestSellerProducts = async () => {
-    const response = await axios.get(`${Base_URL}/products`)
+    const response = await axios.get(`/api/products`)
 
     setBestSellerProducts(response.data.products)
   }
@@ -58,7 +56,7 @@ const Home = () => {
         <span id="scrLeft" onClick={scrLeft}></span>
         <section className="featured-container inline-snap scroll-images">
           {featuredProducts.map((FeaturedProduct) => (
-            <Link to={`api/product/${FeaturedProduct._id}`}>
+            <Link to={`/product/${FeaturedProduct._id}`}>
               <Featured
                 key={FeaturedProduct._id}
                 productName={FeaturedProduct.product_name}
@@ -73,7 +71,7 @@ const Home = () => {
       <h1 className="home-section-title">Best Sellers</h1>
       <section className="best-seller-container">
         {bestSellerProducts.map((product) => (
-          <Link to={`api/product/${product._id}`}>
+          <Link to={`/product/${product._id}`}>
             <BestSeller
               key={product._id}
               productName={product.product_name}

@@ -17,13 +17,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/api/product/:productId" element={<Product />} />
+          <Route path="/product/:productId" element={<Product />} />
           <Route
-            path="/api/product/:productId/new_review"
+            path="/product/:productId/new_review"
             element={<ReviewForm />}
           />
           <Route
-            path="/api/product/:productId/:reviewId/edit_review"
+            path="/product/:productId/:reviewId/edit_review"
             element={<ReviewForm />}
           />
         </Routes>

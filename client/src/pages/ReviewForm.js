@@ -22,9 +22,7 @@ const AddReview = (props) => {
   //finds a single review by it's Id
   useEffect(() => {
     const getReview = async () => {
-      const res = await axios.get(
-        `http://localhost:3001/api/product/review/${reviewId}`
-      )
+      const res = await axios.get(`/api/product/review/${reviewId}`)
       setFormState(res.data)
     }
     getReview()
@@ -44,16 +42,13 @@ const AddReview = (props) => {
   const handleSubmit = (e) => {
     if (initialState._id === undefined) {
       e.preventDefault()
-      axios.post('http://localhost:3001/api/product/review', formState)
+      axios.post('/api/product/review', formState)
       navigate(`/api/product/${productId}`)
       handleRefresh()
     } else {
       e.preventDefault()
-      axios.put(
-        `http://localhost:3001/api/product/review/${reviewId}`,
-        formState
-      )
-      navigate(`/api/product/${productId}`)
+      axios.put(`/api/product/review/${reviewId}`, formState)
+      navigate(`/product/${productId}`)
       handleRefresh()
     }
   }
