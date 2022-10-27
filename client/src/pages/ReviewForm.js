@@ -49,10 +49,11 @@ const AddReview = (props) => {
     } else {
       e.preventDefault()
       axios.put(
-        `http://localhost:3001/api/product/review/${reviewId}`,
+        navigate(
+          `/api/product/${productId}`
+        )`http://localhost:3001/api/product/review/${reviewId}`,
         formState
       )
-      navigate(`/api/product/${productId}`)
       handleRefresh()
     }
   }

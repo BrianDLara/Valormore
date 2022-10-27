@@ -82,6 +82,7 @@
 ### **_Task Lists_** :clipboard:
 
 - [ ] Add a shopping cart page
+- [ ] Add more pages so it can look like a e-commerce website
 - [x] Make api seed files
 - [x] Make a Landing page
 - [x] Make a Product Page
