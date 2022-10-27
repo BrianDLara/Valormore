@@ -12,16 +12,12 @@ const Product = () => {
   const [reviews, setReviews] = useState([])
 
   const findProductById = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/product/${productId}`
-    )
+    const response = await axios.get(`/api/product/${productId}`)
     setProduct(response.data.product)
   }
 
   const findProductReviews = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/product/reviews/${productId}`
-    )
+    const response = await axios.get(`/api/product/reviews/${productId}`)
     setReviews(response.data.reviews)
   }
 
@@ -38,20 +34,24 @@ const Product = () => {
       <section className="product-container">
         <img
           src={product.image}
-          alt={product.productName}
+          alt={product.product_name}
           className="product-image"
         />
         <div className="product-text">
           <h1>{product.product_name}</h1>
           <h3 className="product-description">{product.description}</h3>
-          <h3 className="product-description">Price {product.price} USD</h3>
+          <h3 className="product-description">
+            Price <span id="prevPrice">{product.prevPrice}</span>&nbsp;&nbsp;
+            {product.price} USD
+          </h3>
           <button className="buy-button">Buy Now</button>
+          <h3 className="product-description">
+            Items Left: <span id="availNum">{product.available}</span>
+          </h3>
         </div>
       </section>
 
-      <span className="divider"></span>
-      <h1>Customer Reviews</h1>
-      <span className="divider"></span>
+      <h1 id="review-header">Customer Reviews</h1>
 
       <section className="product-reviews">
         {reviews.map((review) => (

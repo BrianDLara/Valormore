@@ -7,7 +7,9 @@ const Product = new Schema(
     description: { type: String, required: true },
     image: { type: String, required: true },
     video: { type: String, required: false },
-    price: { type: String, required: false }
+    price: { type: String, required: false },
+    prevPrice: { type: String, required: false },
+    available: { type: String, required: false }
   },
   { timestamps: true }
 )

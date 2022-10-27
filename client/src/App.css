@@ -1,17 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat+Alternates&display=swap');
+
+
+
 /* Landing Page */
 *{
   padding: 0;
     margin: 0;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 1.5px;
+  }
+
+  a{
+  text-decoration: none;
+}
+
+h2, h3, h4{
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 h1{
-  font-size: 3rem;
+  
+  font-size: 4rem;
   margin: 1rem 0;
 }
 
 img{
-  width: 16rem;
-  height: 16rem;
   border-radius: 10px;
   border: 1px solid black;
   box-shadow: 6px 4px 5px gray;
@@ -48,7 +61,7 @@ img{
   box-shadow: none;
 }
 
-.nav-container{
+#nav-content{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -58,6 +71,14 @@ img{
   margin: 0 1%;
  
   
+}
+
+#nav-banner{
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  background-color:#d5c3a3;
+  padding: .2rem;
 }
 
 
@@ -112,18 +133,87 @@ color: #6885bf;
 
 .home-section-title{
   margin: 6rem;
+  color: #d0b88e;
 }
 
 
 /* Featured Product */
-.featured-product, .best-seller-product{
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px;
-  cursor: pointer;
- 
-  
+#inline{
+  display: flex;
+  justify-content: center;
+  width:90%;
 }
+
+
+
+::-webkit-scrollbar, .scroll-images::-webkit-scrollbar{
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track, .scroll-images::-webkit-scrollbar-track{
+  background: #f2f2f2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb, .scroll-images::-webkit-scrollbar-thumb{
+  background: #A3B5D5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover, .scroll-images::-webkit-scrollbar-thumb:hover{
+  background: #7586a3;
+}
+
+#scrLeft, #scrRight{
+  background-image: url('../public/images/arrow.png');
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  position: relative;
+  top: 130px;
+  width: 3rem;
+  height: 3rem;
+
+  cursor: pointer;
+
+  filter: saturate(500%) contrast(800%) brightness(500%) 
+  invert(60%) sepia(80%) hue-rotate(180deg); 
+}
+
+#scrLeft:hover, #scrRight:hover{
+  filter: saturate(500%) contrast(800%) brightness(500%) 
+  invert(50%) sepia(70%) hue-rotate(180deg); 
+}
+
+#scrLeft{
+  display:flex;
+  transform: scaleX(-1);
+}
+
+
+.featured-product{
+  max-width: 16rem;
+  max-height: 20rem;
+  border-radius: 10px;
+  cursor: pointer; 
+}
+
+.best-seller-product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  height: 23rem;
+
+  overflow:hidden;
+ 
+  border-radius: 5px;
+  border: 2px solid rgb(165, 164, 164);
+}
+
 
 .featured-container{
   display: grid;
@@ -132,19 +222,41 @@ color: #6885bf;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
  
-
-
   align-items: center;
   height: 20rem;
-  width: 70%;
+  width: 71%;
   margin: 0 2rem 10rem 2rem;
   padding: 0 1rem;
-  gap: 7.5%;
+  gap: 5%;
+}
+
+.best-seller-container{
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto auto;
+
+  justify-content: center;
+  align-items: center;
+ 
+  gap: 12%;
+  margin-bottom: 8rem;
+ 
+    
+}
+.best-seller-product > img{
+  
+  transform: scale(1);
+  transition: 6s ease-out;
+}
+
+.best-seller-product > img:hover{
+  
+  transform: scale(1.1);
 }
 
 .inline-snap{
   scroll-snap-type:inline mandatory;
-  scroll-snap-align: start;
+  scroll-padding-inline: 1rem;
 }
 
 .inline-snap > * {
@@ -152,8 +264,67 @@ color: #6885bf;
 }
 
 #featured-image{
-  width: 26vh;
-  height: 26vh;
+  width:16rem;
+  height: 16rem;
+}
+
+#best-seller-image{
+  width: 18rem;
+  height: 20rem;
+  border: none;
+  border-radius: 0;
+}
+
+/* products */
+#products{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+#products-image {
+  max-width: 30rem;
+  height: auto;
+  
+}
+
+#products-h1{
+  font-size: 2.5rem;
+  color:#6885bf;
+  letter-spacing: 2.5px;
+}
+
+#products-price{
+  position: relative;
+  left: 40%;
+  color:#FFA41C;
+}
+
+#products-container{
+margin: 1rem;
+padding: 1rem;
+gap: 2rem;
+
+}
+
+#product-name, #product-price{
+  z-index: 2;
+ 
+}
+
+#product-name{
+  border:none;
+  color: black;
+margin-top: 1rem;
+  
+}
+
+#product-price{
+  color: #FFA41C;
+margin-bottom: 1rem;
 }
 
 
@@ -183,11 +354,13 @@ color: #6885bf;
 }
 
 .product-text{
+  color:#d3bc93;
   margin: 3rem 8rem;
   width: 40%;
 }
 
 .product-description{
+  color: rgb(58, 56, 56);
 margin-top: 7rem;
 font-size: 2rem;
 }
@@ -210,11 +383,28 @@ font-size: 2rem;
   background-color: #dd8e17dc;
 }
 
+#prevPrice, #availNum{
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#prevPrice{
+  color: #A11313;
+  text-decoration: line-through;
+}
+
+#availNum{
+  color: #FFA41C;
+}
+
 
 /* Product reviews */
+#review-header{
+  color:#d3bc93;
+}
+
 .product-reviews{
  
-margin: 6rem 60rem 1rem 1rem;
+margin: 4rem 60rem 1rem 1rem;
 }
 
 .reviews-container{
@@ -265,6 +455,7 @@ color:#6885bf;
   font-weight: bold;
   background-color: transparent;
   border: 1px solid transparent;
+  color:#6885bf;
 }
 
 .review-link:hover{
