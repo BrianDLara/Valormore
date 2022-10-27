@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const Reviews = (props) => {
   let { productId } = useParams() 
-  let navigate = useNavigate()
+  // let navigate = useNavigate()
 
   const handleRefresh = () => {
     window.location.reload(false);
@@ -16,7 +16,7 @@ const Reviews = (props) => {
 
   const handleDelete = async () => {
     await axios.delete(`http://localhost:3001/api/product/review/${props.id}`)
-    navigate(`/api/product/${productId}`)
+    // navigate(`/api/product/${productId}`)
     handleRefresh()
   }
   
@@ -34,8 +34,10 @@ const Reviews = (props) => {
           <button className='review-link'>Edit</button>
         </Link>
         <span className='review-link-divider'>|</span>
+
+        <Link to={ `/api/product/${productId}` }>  
         <button onClick={handleDelete}  className='review-link'>Delete</button>
-        
+        </Link>
       </div>
         <h2 className='review-title'>{props.title}</h2>
         <h3 className='review-description'>{props.description}</h3>
