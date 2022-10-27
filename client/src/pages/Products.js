@@ -9,8 +9,6 @@ const Products = () => {
 
   const getProducts = async () => {
     const response = await axios.get(`http://localhost:3001/api/products`)
-    console.log(response.data.products)
-
     setProducts(response.data.products)
   }
 

@@ -34,10 +34,7 @@ const Reviews = (props) => {
           <button className='review-link'>Edit</button>
         </Link>
         <span className='review-link-divider'>|</span>
-
-        <Link to={ `/api/product/${productId}` }>  
         <button onClick={handleDelete}  className='review-link'>Delete</button>
-        </Link>
       </div>
         <h2 className='review-title'>{props.title}</h2>
         <h3 className='review-description'>{props.description}</h3>
