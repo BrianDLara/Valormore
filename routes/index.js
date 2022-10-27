@@ -24,7 +24,7 @@ router.get('/product/reviews/:id', controllers.getReviewByProductId)
 router.get('/product/new_review', controllers.getReview)
 
 //Get product by Id from products page
-router.get('/api/product/:id', controllers.getProductById)
+router.get('/product/:id', controllers.getProductById)
 
 //Post a new review
 router.post('/product/review', controllers.createReview)

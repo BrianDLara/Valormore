@@ -5,19 +5,20 @@ import Featured from '../components/Featured'
 import BestSeller from '../components/BestSeller'
 import Banner from '../components/Banner'
 import { Link } from 'react-router-dom'
+const BASE_URL = '/api'
 
 const Home = () => {
   const [featuredProducts, setProducts] = useState([])
   const [bestSellerProducts, setBestSellerProducts] = useState([])
 
   const getFeaturedProducts = async () => {
-    const response = await axios.get(`/api/products`)
+    const response = await axios.get(`${BASE_URL}/products`)
 
     setProducts(response.data.products)
   }
 
   const getBestSellerProducts = async () => {
-    const response = await axios.get(`/api/products`)
+    const response = await axios.get(`${BASE_URL}/products`)
 
     setBestSellerProducts(response.data.products)
   }

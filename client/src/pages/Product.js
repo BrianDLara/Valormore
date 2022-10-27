@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Reviews from '../components/Reviews'
 import { Link } from 'react-router-dom'
+const BASE_URL = '/api'
 
 const Product = () => {
   let { productId } = useParams()
@@ -12,12 +13,13 @@ const Product = () => {
   const [reviews, setReviews] = useState([])
 
   const findProductById = async () => {
-    const response = await axios.get(`/api/product/${productId}`)
+    const response = await axios.get(`${BASE_URL}/product/${productId}`)
     setProduct(response.data.product)
+    console.log(response.data.product)
   }
 
   const findProductReviews = async () => {
-    const response = await axios.get(`/api/product/reviews/${productId}`)
+    const response = await axios.get(`${BASE_URL}/product/reviews/${productId}`)
     setReviews(response.data.reviews)
   }
 
@@ -64,7 +66,7 @@ const Product = () => {
         ))}
       </section>
 
-      <Link type="button" to={`/api/product/${productId}/new_review`}>
+      <Link type="button" to={`/product/${productId}/new_review`}>
         <button className="review-button">Add Review</button>
       </Link>
     </div>

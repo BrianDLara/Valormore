@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Product from '../components/Products'
+const BASE_URL = '/api'
 
 const Products = () => {
   const [products, setProducts] = useState(null)
 
   const getProducts = async () => {
-    const response = await axios.get(`/api/products`)
+    const response = await axios.get(`${BASE_URL}/products`)
     setProducts(response.data.products)
   }
 

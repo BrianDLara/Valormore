@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import { useNavigate, useParams } from 'react-router-dom'
+const BASE_URL = '/api'
 
 
 
@@ -15,7 +15,8 @@ const Reviews = (props) => {
   }
 
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:3001/api/product/review/${props.id}`)
+    await axios.delete(`${BASE_URL}/product/review/${props.id}`)
+    handleRefresh();
    
   }
   

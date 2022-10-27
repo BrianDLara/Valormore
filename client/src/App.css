@@ -535,7 +535,8 @@ color:#6885bf;
 }
 
 .form-button{
-  position:absolute;
+  position:relative;
+  top: -4%;
  left: 38%;
   color: white;
   background-color: #768ebe;

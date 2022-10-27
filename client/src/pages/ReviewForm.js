@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+const BASE_URL = '/api'
 
 const AddReview = (props) => {
   //routed-dom imports
@@ -22,7 +23,7 @@ const AddReview = (props) => {
   //finds a single review by it's Id
   useEffect(() => {
     const getReview = async () => {
-      const res = await axios.get(`/api/product/review/${reviewId}`)
+      const res = await axios.get(`${BASE_URL}/product/review/${reviewId}`)
       setFormState(res.data)
     }
     getReview()
@@ -42,12 +43,12 @@ const AddReview = (props) => {
   const handleSubmit = (e) => {
     if (initialState._id === undefined) {
       e.preventDefault()
-      axios.post('/api/product/review', formState)
-      navigate(`/api/product/${productId}`)
+      axios.post(`${BASE_URL}/product/review`, formState)
+      navigate(`/product/${productId}`)
       handleRefresh()
     } else {
       e.preventDefault()
-      axios.put(`/api/product/review/${reviewId}`, formState)
+      axios.put(`${BASE_URL}/product/review/${reviewId}`, formState)
       navigate(`/product/${productId}`)
       handleRefresh()
     }
