@@ -8,7 +8,7 @@ const Products = () => {
   const [products, setProducts] = useState(null)
 
   const getProducts = async () => {
-    const response = await axios.get(`/api/products`)
+    const response = await axios.get(`http://localhost:3001/api/products`)
     console.log(response.data.products)
 
     setProducts(response.data.products)
