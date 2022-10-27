@@ -16,8 +16,7 @@ const Reviews = (props) => {
 
   const handleDelete = async () => {
     await axios.delete(`http://localhost:3001/api/product/review/${props.id}`)
-    // navigate(`/api/product/${productId}`)
-    handleRefresh()
+   
   }
   
 
