@@ -1,14 +1,13 @@
 import axios from 'axios';
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 const BASE_URL = '/api'
 
 
 
 const Reviews = (props) => {
   let { productId } = useParams() 
-  // let navigate = useNavigate()
 
   const handleRefresh = () => {
     window.location.reload(false);

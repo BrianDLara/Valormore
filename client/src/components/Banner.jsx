@@ -8,10 +8,11 @@ const Banner = () => {
         bannerCarousel();
     }
 
-    let startCarouselLoop = setInterval(function(){
+    const startCarouselLoop = setInterval(function(){
         bannerCarousel();
     }, bannerTimer)
 
+    
    
 
     const bannerCarousel = () =>{
