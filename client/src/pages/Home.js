@@ -5,8 +5,8 @@ import Featured from '../components/Featured'
 import BestSeller from '../components/BestSeller'
 import Banner from '../components/Banner'
 import { Link } from 'react-router-dom'
-const BASE_URL = '/api'
 
+const BASE_URL = '/api'
 const Home = () => {
   const [featuredProducts, setProducts] = useState([])
   const [bestSellerProducts, setBestSellerProducts] = useState([])
