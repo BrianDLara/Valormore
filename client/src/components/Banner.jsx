@@ -8,17 +8,14 @@ const Banner = () => {
         bannerCarousel();
     }
 
-    const startCarouselLoop = setInterval(function(){
-        bannerCarousel();
-    }, bannerTimer)
-
     
-   
-
+    
+    
+    
     const bannerCarousel = () =>{
         if(bannerPosition === 1){
             document.getElementById('img-banner-2').style.opacity = '0';
-
+            
             setTimeout(function () {
                 document.getElementById(`img-banner-1`).style.right = "0px";
                 document.getElementById(`img-banner-1`).style.zIndex = "100";
@@ -27,7 +24,7 @@ const Banner = () => {
                 document.getElementById(`img-banner-3`).style.right = "2000px";
                 document.getElementById(`img-banner-3`).style.zIndex = "10";
             }, 500);
-
+            
             setTimeout(function() {
                 document.getElementById('img-banner-2').style.opacity = '1';
             }, 1000)
@@ -35,7 +32,7 @@ const Banner = () => {
         }
         else if(bannerPosition === 2){
             document.getElementById('img-banner-3').style.opacity = '0';
-
+            
             setTimeout(function () {
                 document.getElementById(`img-banner-2`).style.right = "0px";
                 document.getElementById(`img-banner-2`).style.zIndex = "100";
@@ -44,7 +41,7 @@ const Banner = () => {
                 document.getElementById(`img-banner-1`).style.right = "2000px";
                 document.getElementById(`img-banner-1`).style.zIndex = "10";
             }, 500);
-
+            
             setTimeout(function() {
                 document.getElementById('img-banner-3').style.opacity = '1';
             }, 1000)
@@ -52,7 +49,7 @@ const Banner = () => {
         }
         else if(bannerPosition === 3){
             document.getElementById('img-banner-1').style.opacity = '0';
-
+            
             setTimeout(function () {
                 document.getElementById(`img-banner-3`).style.right = "0px";
                 document.getElementById(`img-banner-3`).style.zIndex = "100";
@@ -61,14 +58,19 @@ const Banner = () => {
                 document.getElementById(`img-banner-2`).style.right = "2000px";
                 document.getElementById(`img-banner-2`).style.zIndex = "10";
             }, 500);
-
+            
             setTimeout(function() {
                 document.getElementById('img-banner-1').style.opacity = '1';
             }, 1000)
             bannerPosition = 1;
         }
     }
-  return (
+    
+    const startCarouselLoop = setInterval(function(){
+        bannerCarousel();
+    }, bannerTimer)
+    
+    return (
     <div id="banner-container">
         <div className='img-banner' id='img-banner-3'></div>
         <div className='img-banner' id='img-banner-2'></div>

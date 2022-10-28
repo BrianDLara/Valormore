@@ -33,7 +33,7 @@ const Product = () => {
 
   return product !== null ? (
     <div className="product-page">
-      <section className="product-container">
+      <section className="product-container" key={product._id}>
         <img
           src={product.image}
           alt={product.product_name}

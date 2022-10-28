@@ -25,7 +25,7 @@
 
 #### ERD
 
-![image](https://i.imgur.com/vcKXGxd.png)
+![image](https://i.imgur.com/65zSt0q.png)
 
 #### Component Hierarchy Diagram
 

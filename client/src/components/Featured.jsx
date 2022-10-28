@@ -4,7 +4,7 @@ const Featured = (props) => {
 
 
   return (
-    <div className='featured-product inline-snap'>
+    <div className='featured-product inline-snap' key={props.key}>
       <img src={props.image} alt={props.productName} id='featured-image'/>
     </div>
   )
