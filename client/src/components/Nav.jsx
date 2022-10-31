@@ -6,12 +6,12 @@ const Nav = () => {
     <div className = "nav-container">
       
       <span id='nav-banner'>
-        <h4>It's the biggest sell of the year. Everything is currently at 15% off sitewide</h4>
+        <h4 id='nav-banner-text'>It's the biggest sell of the year. Everything is currently at 15% off sitewide</h4>
       </span>
         
         <div id='nav-content'>  
           <Link to ={`/`}><img src="/images/logo1.png" alt="website logo" className='logo'/></Link>
-          <div>
+          <div id='links-container'>
               <NavLink to = '/' className="nav-link"> Home </NavLink>
               <NavLink to = '/products' className="nav-link"> Products </NavLink>
           </div>

@@ -15,7 +15,6 @@ const Product = () => {
   const findProductById = async () => {
     const response = await axios.get(`${BASE_URL}/product/${productId}`)
     setProduct(response.data.product)
-    console.log(response.data.product)
   }
 
   const findProductReviews = async () => {
@@ -40,7 +39,7 @@ const Product = () => {
           className="product-image"
         />
         <div className="product-text">
-          <h1>{product.product_name}</h1>
+          <h1 id="product-title">{product.product_name}</h1>
           <h3 className="product-description">{product.description}</h3>
           <h3 className="product-description">
             Price <span id="prevPrice">{product.prevPrice}</span>&nbsp;&nbsp;

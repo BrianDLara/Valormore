@@ -79,7 +79,7 @@ const AddReview = (props) => {
           </label>
           <textarea
             id="description"
-            cols="30"
+            cols="55"
             rows="10"
             onChange={handleChange}
             value={formState.description}
