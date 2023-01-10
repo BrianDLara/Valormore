@@ -10,8 +10,8 @@
 
 ####
 
-**Website Link:**
-[Heroku](https://valormore.herokuapp.com/)
+**Live Website:**
+[Link](https://valormore.herokuapp.com/)
 
 ---
 
@@ -25,7 +25,7 @@
 
 #### ERD
 
-![image](https://i.imgur.com/65zSt0q.png)
+![image](https://i.imgur.com/1nPzq9p.png)
 
 #### Component Hierarchy Diagram
 
@@ -61,7 +61,7 @@
 
 #### - You will be welcomed by a carousel banner. If you scroll down you will see featured and best seller products that will take you to their corresponding page.
 
-#### - Most of the features are still for show like the buy now button, but will eventually become available on future updates.
+#### - Otherwise you can browse all the products from the products tab in the navbar.
 
 ---
 

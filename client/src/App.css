@@ -8,7 +8,7 @@
     letter-spacing: 1.5px;
   }
 
-  a{
+a{
   text-decoration: none;
 }
 
@@ -400,11 +400,6 @@ font-size: 2rem;
   color:#d3bc93;
 }
 
-.product-reviews{
- 
-margin: 4rem 60rem 1rem 1rem;
-}
-
 .reviews-container{
   display: flex;
   position: relative;
@@ -435,7 +430,7 @@ color:#6885bf;
 
 
 
-#review-options{
+.review-options{
   display: flex;
   flex-direction: row;
   position:relative;
@@ -444,6 +439,7 @@ color:#6885bf;
   width: 5rem;
   height: auto;
   padding: 0 1rem; 
+  background-color: #A11313;
 }
 
 .review-link{
