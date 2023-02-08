@@ -9,7 +9,7 @@ router.get('/', (req, res) => res.send('This is the Landing Page!'))
 router.get('/products', controllers.getAllProducts)
 
 // Post new product
-router.post('/product', controllers.createProduct)
+router.post('/add_product', controllers.createProduct)
 
 //delete product
 router.delete('/product/:id', controllers.deleteProduct)
